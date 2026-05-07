@@ -1,0 +1,81 @@
+{
+  "name": "PaymentMethod",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user who owns this payment method"
+    },
+    "method_type": {
+      "type": "string",
+      "enum": [
+        "upi",
+        "imps",
+        "bank_transfer",
+        "cash_deposit",
+        "paypal",
+        "wise",
+        "revolut",
+        "skrill",
+        "zelle",
+        "venmo",
+        "sepa",
+        "pix",
+        "gcash",
+        "paytm",
+        "phonepe",
+        "googlepay",
+        "other"
+      ],
+      "description": "Type of payment method"
+    },
+    "label": {
+      "type": "string",
+      "description": "Display label for this payment method"
+    },
+    "details": {
+      "type": "object",
+      "properties": {
+        "account_name": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "bank_name": {
+          "type": "string"
+        },
+        "ifsc_code": {
+          "type": "string"
+        },
+        "upi_id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "other_info": {
+          "type": "string"
+        }
+      },
+      "description": "Payment method details"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country for this payment method"
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "Whether this payment method is active"
+    }
+  },
+  "required": [
+    "user_email",
+    "method_type",
+    "label",
+    "is_active"
+  ]
+}

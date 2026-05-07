@@ -1,0 +1,100 @@
+{
+  "name": "TradeAd",
+  "type": "object",
+  "properties": {
+    "ad_type": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell"
+      ],
+      "description": "Whether this is a buy or sell ad"
+    },
+    "crypto_asset": {
+      "type": "string",
+      "enum": [
+        "USDT",
+        "USDC"
+      ],
+      "description": "Crypto asset being traded"
+    },
+    "price_per_unit": {
+      "type": "number",
+      "description": "Price per unit in fiat currency"
+    },
+    "fiat_currency": {
+      "type": "string",
+      "description": "Fiat currency code (USD, INR, EUR, etc.)"
+    },
+    "total_amount": {
+      "type": "number",
+      "description": "Total crypto amount available"
+    },
+    "remaining_amount": {
+      "type": "number",
+      "description": "Remaining crypto amount"
+    },
+    "min_trade": {
+      "type": "number",
+      "description": "Minimum trade amount in fiat"
+    },
+    "max_trade": {
+      "type": "number",
+      "description": "Maximum trade amount in fiat"
+    },
+    "payment_methods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Accepted payment methods"
+    },
+    "terms": {
+      "type": "string",
+      "description": "Trade terms and conditions"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed",
+        "cancelled"
+      ],
+      "description": "Ad status"
+    },
+    "trader_name": {
+      "type": "string",
+      "description": "Display name of the trader"
+    },
+    "trader_email": {
+      "type": "string",
+      "description": "Email of the trader"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country of the trader"
+    },
+    "total_trades": {
+      "type": "number",
+      "description": "Total completed trades by this trader"
+    },
+    "completion_rate": {
+      "type": "number",
+      "description": "Trade completion rate percentage"
+    }
+  },
+  "required": [
+    "ad_type",
+    "crypto_asset",
+    "price_per_unit",
+    "fiat_currency",
+    "total_amount",
+    "remaining_amount",
+    "min_trade",
+    "max_trade",
+    "payment_methods",
+    "status",
+    "trader_email"
+  ]
+}

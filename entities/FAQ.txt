@@ -1,0 +1,39 @@
+{
+  "name": "FAQ",
+  "type": "object",
+  "properties": {
+    "question": {
+      "type": "string",
+      "description": "FAQ question"
+    },
+    "answer": {
+      "type": "string",
+      "description": "FAQ answer"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "general",
+        "trading",
+        "payment",
+        "security",
+        "fees",
+        "disputes",
+        "commands"
+      ],
+      "description": "FAQ category"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    },
+    "is_active": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "question",
+    "answer",
+    "category"
+  ]
+}

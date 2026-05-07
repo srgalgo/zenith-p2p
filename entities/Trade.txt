@@ -1,0 +1,161 @@
+{
+  "name": "Trade",
+  "type": "object",
+  "properties": {
+    "ad_id": {
+      "type": "string",
+      "description": "Reference to the TradeAd"
+    },
+    "buyer_email": {
+      "type": "string",
+      "description": "Email of the buyer"
+    },
+    "seller_email": {
+      "type": "string",
+      "description": "Email of the seller"
+    },
+    "buyer_name": {
+      "type": "string"
+    },
+    "seller_name": {
+      "type": "string"
+    },
+    "crypto_asset": {
+      "type": "string",
+      "enum": [
+        "USDT",
+        "USDC"
+      ]
+    },
+    "crypto_amount": {
+      "type": "number",
+      "description": "Amount of crypto being traded"
+    },
+    "fiat_amount": {
+      "type": "number",
+      "description": "Total fiat amount"
+    },
+    "fiat_currency": {
+      "type": "string"
+    },
+    "price_per_unit": {
+      "type": "number"
+    },
+    "payment_method": {
+      "type": "string",
+      "description": "Selected payment method for this trade"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "escrow_held",
+        "payment_sent",
+        "payment_confirmed",
+        "completed",
+        "disputed",
+        "cancelled",
+        "expired"
+      ],
+      "description": "Trade status"
+    },
+    "escrow_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "held",
+        "released",
+        "refunded"
+      ],
+      "description": "Escrow status"
+    },
+    "payment_proof_url": {
+      "type": "string",
+      "description": "URL of payment proof image"
+    },
+    "payment_proof_details": {
+      "type": "object",
+      "properties": {
+        "transaction_id": {
+          "type": "string"
+        },
+        "reference_id": {
+          "type": "string"
+        },
+        "amount_paid": {
+          "type": "number"
+        },
+        "payment_date": {
+          "type": "string"
+        },
+        "payment_time": {
+          "type": "string"
+        },
+        "sender_name": {
+          "type": "string"
+        },
+        "sender_account": {
+          "type": "string"
+        }
+      },
+      "description": "Detailed payment proof information"
+    },
+    "trade_started_at": {
+      "type": "string",
+      "description": "When the trade timer started"
+    },
+    "trade_expires_at": {
+      "type": "string",
+      "description": "When the trade window expires (60 mins)"
+    },
+    "buyer_fee": {
+      "type": "number",
+      "description": "Fee charged to buyer"
+    },
+    "seller_fee": {
+      "type": "number",
+      "description": "Fee charged to seller"
+    },
+    "fee_percentage": {
+      "type": "number",
+      "description": "Fee percentage applied"
+    },
+    "dispute_reason": {
+      "type": "string"
+    },
+    "dispute_messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sender": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "is_admin": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "admin_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "ad_id",
+    "buyer_email",
+    "seller_email",
+    "crypto_asset",
+    "crypto_amount",
+    "fiat_amount",
+    "fiat_currency",
+    "status",
+    "escrow_status"
+  ]
+}

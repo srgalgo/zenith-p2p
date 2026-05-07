@@ -1,0 +1,41 @@
+{
+  "name": "Wallet",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the wallet owner"
+    },
+    "usdt_balance": {
+      "type": "number",
+      "description": "Available USDT balance"
+    },
+    "usdc_balance": {
+      "type": "number",
+      "description": "Available USDC balance"
+    },
+    "usdt_held": {
+      "type": "number",
+      "description": "USDT held in escrow"
+    },
+    "usdc_held": {
+      "type": "number",
+      "description": "USDC held in escrow"
+    },
+    "total_trades": {
+      "type": "number",
+      "description": "Total completed trades"
+    },
+    "total_volume": {
+      "type": "number",
+      "description": "Total trading volume in USD"
+    }
+  },
+  "required": [
+    "user_email",
+    "usdt_balance",
+    "usdc_balance",
+    "usdt_held",
+    "usdc_held"
+  ]
+}

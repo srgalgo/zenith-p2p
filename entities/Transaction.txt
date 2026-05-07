@@ -1,0 +1,62 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "deposit",
+        "withdrawal"
+      ],
+      "description": "Transaction type"
+    },
+    "asset": {
+      "type": "string",
+      "enum": [
+        "USDT",
+        "USDC"
+      ],
+      "description": "Crypto asset"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Amount of crypto"
+    },
+    "network": {
+      "type": "string",
+      "description": "Blockchain network (TRC20, ERC20, BEP20)"
+    },
+    "txn_hash": {
+      "type": "string",
+      "description": "Blockchain transaction hash"
+    },
+    "wallet_address": {
+      "type": "string",
+      "description": "External wallet address"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed",
+        "failed"
+      ],
+      "description": "Transaction status"
+    },
+    "note": {
+      "type": "string",
+      "description": "Optional note"
+    }
+  },
+  "required": [
+    "user_email",
+    "type",
+    "asset",
+    "amount",
+    "status"
+  ]
+}

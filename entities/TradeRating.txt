@@ -1,0 +1,39 @@
+{
+  "name": "TradeRating",
+  "type": "object",
+  "properties": {
+    "trade_id": {
+      "type": "string"
+    },
+    "from_email": {
+      "type": "string"
+    },
+    "to_email": {
+      "type": "string"
+    },
+    "to_name": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "comment": {
+      "type": "string"
+    },
+    "trade_type": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell"
+      ]
+    }
+  },
+  "required": [
+    "trade_id",
+    "from_email",
+    "to_email",
+    "rating"
+  ]
+}

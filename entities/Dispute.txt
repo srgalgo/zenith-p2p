@@ -1,0 +1,80 @@
+{
+  "name": "Dispute",
+  "type": "object",
+  "properties": {
+    "trade_id": {
+      "type": "string",
+      "description": "Reference to the trade"
+    },
+    "raised_by": {
+      "type": "string",
+      "description": "Email of user who raised the dispute"
+    },
+    "against": {
+      "type": "string",
+      "description": "Email of the other party"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for the dispute"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description"
+    },
+    "evidence_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Evidence screenshots/files"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "under_review",
+        "resolved_buyer",
+        "resolved_seller",
+        "closed"
+      ],
+      "description": "Dispute status"
+    },
+    "resolution": {
+      "type": "string",
+      "description": "Resolution details"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sender": {
+            "type": "string"
+          },
+          "sender_name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "is_admin": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "admin_assigned": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trade_id",
+    "raised_by",
+    "reason",
+    "status"
+  ]
+}

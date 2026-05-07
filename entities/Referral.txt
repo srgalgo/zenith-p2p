@@ -1,0 +1,32 @@
+{
+  "name": "Referral",
+  "type": "object",
+  "properties": {
+    "referrer_email": {
+      "type": "string"
+    },
+    "referred_email": {
+      "type": "string"
+    },
+    "referral_code": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed"
+      ],
+      "description": "completed when referred user finishes first trade"
+    },
+    "bonus_paid": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "referrer_email",
+    "referred_email",
+    "referral_code",
+    "status"
+  ]
+}

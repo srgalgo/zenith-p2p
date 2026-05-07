@@ -1,0 +1,22 @@
+{
+  "name": "PlatformSettings",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Setting key e.g. deposit_USDT_TRC20"
+    },
+    "value": {
+      "type": "string",
+      "description": "Setting value"
+    },
+    "label": {
+      "type": "string",
+      "description": "Human-readable label"
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ]
+}
